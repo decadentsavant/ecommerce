@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "489002468134",
+    "project_id": "ecommerce-portfolio-corey",
+    "storage_bucket": "ecommerce-portfolio-corey.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489002468134:android:7e458de4cd7d981e71f7e7",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489002468134-d65453d20sg7qq0d4erdqpj3nc6km1n0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvo8YZaJ1TkuzNc3rt73uW2nQv-z2Eovc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489002468134-d65453d20sg7qq0d4erdqpj3nc6km1n0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
