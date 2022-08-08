@@ -11,12 +11,14 @@ final authStateChangesProvider = StreamProvider<User?>(
   },
 );
 
-final databaseProvider = Provider<FirestoreService?>((ref) {
-  final auth = ref.watch(authStateChangesProvider);
+final databaseProvider = Provider<FirestoreService?>(
+  (ref) {
+    final auth = ref.watch(authStateChangesProvider);
 
-  final uid = auth.asData?.value?.uid;
-  if (uid != null) {
-    return FirestoreService(uid: uid);
-  }
-  return null;
-});
+    final uid = auth.asData?.value?.uid;
+    if (uid != null) {
+      return FirestoreService(uid: uid);
+    }
+    return null;
+  },
+);
