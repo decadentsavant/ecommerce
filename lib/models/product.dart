@@ -1,5 +1,6 @@
 class Product {
   Product({
+    this.id,
     required this.name,
     required this.description,
     required this.price,
@@ -7,18 +8,21 @@ class Product {
   });
 
   Product.fromMap(Map<String, dynamic> map)
-      : name = map['name'] as String? ?? '',
+      : id = map['id'] as String? ?? '',
+        name = map['name'] as String? ?? '',
         description = map['description'] as String? ?? '',
         price = map['price'] as double? ?? 0.0,
         imageUrl = map['imageUrl'] as String? ?? '';
 
+  final String? id;
   final String name;
   final String description;
   final double price;
   final String imageUrl;
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toMap(String docId) {
     return {
+      'id' : docId,
       'name': name,
       'description': description,
       'price': price,

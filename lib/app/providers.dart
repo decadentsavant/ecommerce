@@ -1,4 +1,5 @@
 import 'package:ecommerce/services/firestore_service.dart';
+import 'package:ecommerce/services/storage_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -18,6 +19,17 @@ final databaseProvider = Provider<FirestoreService?>(
     final uid = auth.asData?.value?.uid;
     if (uid != null) {
       return FirestoreService(uid: uid);
+    }
+    return null;
+  },
+);
+
+final storageProvider = Provider<StorageService?>(
+  (ref) {
+    final auth = ref.watch(authStateChangesProvider);
+    final uid = auth.asData?.value?.uid;
+    if (uid != null) {
+      return StorageService(uid: uid);
     }
     return null;
   },

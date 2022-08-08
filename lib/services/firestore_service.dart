@@ -15,11 +15,11 @@ class FirestoreService {
   Future<void> addProduct(
     Product product,
   ) async {
-    await firestore
-        .collection('products')
-        .add(product.toMap())
-        .then(print)
-        .catchError((onError) => print('Error'));
+    final docId = firestore.collection('products').doc().id;
+    print(docId);
+    await firestore.collection('products').doc(docId).set(
+          product.toMap(docId),
+        );
   }
 
   Stream<List<Product>> getProducts() {
@@ -32,6 +32,6 @@ class FirestoreService {
   }
 
   Future<void> deleteProduct(String id) async {
-    return await firestore.collection('products').doc(id).delete();
+    return firestore.collection('products').doc(id).delete();
   }
 }
