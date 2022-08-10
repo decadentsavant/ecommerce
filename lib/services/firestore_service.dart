@@ -2,6 +2,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/models/product.dart';
+import 'package:ecommerce/models/user_data.dart';
 
 class FirestoreService {
   FirestoreService({
@@ -11,6 +12,17 @@ class FirestoreService {
   final String uid;
 
   FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+  Future<void> addUser(
+    UserData user,
+  ) async {
+    await firestore.collection('users').doc(user.uid).set(user.toMap());
+  }
+
+  Future<UserData?> getUser(String uid) async {
+    final doc = await firestore.collection('users').doc(uid).get();
+    return doc.exists ? UserData.fromMap(doc.data()!) : null;
+  }
 
   Future<void> addProduct(
     Product product,
