@@ -22,7 +22,7 @@ class Product {
 
   Map<String, dynamic> toMap(String docId) {
     return {
-      'id' : docId,
+      'id': docId,
       'name': name,
       'description': description,
       'price': price,

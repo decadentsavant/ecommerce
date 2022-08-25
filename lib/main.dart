@@ -14,8 +14,8 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   Stripe.publishableKey =
-  // ALERT!: Note whether this is test key vs live key
-  // ignore: lines_longer_than_80_chars
+      // ALERT!: Note whether this is test key vs live key
+      // ignore: lines_longer_than_80_chars
       'pk_test_51H7j2yI3MizAa4zxAhPNV33pjSzL69Punb8VCHdfdbB7uTse87IVHkupJaDxfjJsB8KoDpo6BEy0uRzjuWKpeWRQ00NAUF9wGr';
   // Stripe.merchantIdentifier = 'any string works';
   // await Stripe.instance.applySettings();
