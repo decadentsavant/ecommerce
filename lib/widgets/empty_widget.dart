@@ -15,6 +15,7 @@ class EmptyWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Lottie.asset('assets/anim/empty.json', width: 200, repeat: false),
+          Text(text),
         ],
       ),
     );
