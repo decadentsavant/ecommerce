@@ -20,6 +20,8 @@ class Product {
   final double price;
   final String imageUrl;
 
+  double get priceWithTax => price *1.2;
+
   Map<String, dynamic> toMap(String docId) {
     return {
       'id': docId,

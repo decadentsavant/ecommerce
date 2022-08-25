@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:ecommerce/app/providers.dart';
 import 'package:ecommerce/widgets/empty_widget.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +77,10 @@ class UserBag extends ConsumerWidget {
                           userBag.totalPrice,
                         );
                         if (!result.isError) {
-                          // Save the order here in the next lesson
+                          await ref.read(databaseProvider)!.saveOrder(
+                                result.payIntentId!,
+                                userBag.productsBag,
+                              );
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(content: Text('Payment completed!')),
                           );
